@@ -78,11 +78,11 @@
 
 //----------------------------------------------------------------------
 
-const ytdl = require('@distube/ytdl-core');
+import ytdl from '@distube/ytdl-core';
 
 export default async function handler(req, res) {
     if (req.method !== 'GET') {
-        return res.status(405).json({ error: 'Method not allowed' });
+        return res.status(405).json({ error: 'Only GET requests allowed' });
     }
 
     const videoURL = req.query.url;
@@ -94,16 +94,13 @@ export default async function handler(req, res) {
     try {
         const info = await ytdl.getInfo(videoURL);
         const title = info.videoDetails.title.replace(/[^\w\s]/gi, '');
-
         res.setHeader('Content-Disposition', `attachment; filename="${title}.mp4"`);
         res.setHeader('Content-Type', 'video/mp4');
 
-        ytdl(videoURL, {
-            format: 'mp4'
-        }).pipe(res);
+        ytdl(videoURL, { format: 'mp4' }).pipe(res);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Failed to download video' });
+        res.status(500).json({ error: 'Failed to process video download' });
     }
 }
 

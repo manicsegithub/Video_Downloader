@@ -2,13 +2,11 @@
   "name": "chance-youtube-downloader-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Server.js",
   "scripts": {
     "dev": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "vercel-build": "react-scripts build"
+    "start": "node Server"
   },
   "keywords": [],
   "author": "",

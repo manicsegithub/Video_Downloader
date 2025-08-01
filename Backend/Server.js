@@ -5,10 +5,19 @@ const cors = require('cors');
 const ytdl = require('@distube/ytdl-core');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin : ["https://video-downloader-backend.vercel.app"],
+    methods : ["POST","GET"],
+    credentials : true
+}));
 app.use(express.json());
 
+app.get("/",(req,res) => {
+    res.json("Hello");
+})
+
 app.get('/download', async (req, res) => {
+
     const videoURL = req.query.url;
 
     if (!ytdl.validateURL(videoURL)) {

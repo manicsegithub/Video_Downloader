@@ -36,7 +36,7 @@
 // export default App;
 
 
-//2.------------------------------------------------------------------------
+//2.Main file work in local server ------------------------------------------------------------------------
 
 // import React, { useState } from 'react';
 // //import { useNavigate } from 'react-router-dom'
@@ -116,7 +116,7 @@
 // export default App;
 
 
-//3.-------------------------------------------------------------------
+//3.Use for vercel server -------------------------------------------------------------------
 
 import React, { useState } from 'react';
 //import { useNavigate } from 'react-router-dom'

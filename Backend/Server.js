@@ -50,7 +50,7 @@ const ytdl = require('@distube/ytdl-core');
 
 const app = express();
 app.use(cors({
-    origin : ["https://video-downloader-frontend.vercel.app"],
+    origin : ["https://video-downloader-frontend-theta.vercel.app/"],
     methods : ["POST","GET"],
     credentials : true
 }));

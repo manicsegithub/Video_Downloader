@@ -132,7 +132,7 @@ function App() {
       return;
     }
 
-    window.open(`https://video-downloader-backend-weld.vercel.app/${encodeURIComponent(url)}`);
+    window.open(`https://video-downloader-backend-weld.vercel.app/download?url=...${encodeURIComponent(url)}`);
 
     // navigate("/");
 

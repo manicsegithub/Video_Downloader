@@ -13,9 +13,9 @@ app.use(cors({
 app.use(express.json());
 
 //Check the server is connected or not 
-app.get('/', (req,res) => {
-    return res.json("Connected Successfully...");
-})
+// app.get('/', (req,res) => {
+//     return res.json("Connected Successfully...");
+// })
 
 app.get('/download', async (req, res) => {
 

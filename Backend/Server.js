@@ -6,16 +6,16 @@ const ytdl = require('@distube/ytdl-core');
 
 const app = express();
 app.use(cors({
-    origin : ["https://video-downloader-backend.vercel.app"],
+    origin : ["https://video-downloader-frontend.vercel.app"],
     methods : ["POST","GET"],
     credentials : true
 }));
 app.use(express.json());
 
 //Check the server is connected or not 
-// app.get('/', (req,res) => {
-//     return res.json("Connected Successfully...");
-// })
+app.get('/', (req,res) => {
+    return res.json("Connected Successfully...");
+})
 
 app.get('/download', async (req, res) => {
 
